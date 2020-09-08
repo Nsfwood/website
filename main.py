@@ -7,7 +7,6 @@ userLanguage = 'en'
 
 @app.route('/', methods=['GET'])
 def hello():
-	print(userLanguage)
 	if userLanguage == 'it':
 		return render_template('index2_IT.html')
 	elif userLanguage == 'de':
