@@ -8,11 +8,15 @@ app = Flask(__name__)
 
 userLanguage = 'en'
 ts = time.time()
+tracking = True
 
 @app.route('/', methods=['GET'])
 def hello():
 	print(ts)
+	print(request.headers.get('DNT'))
 	print(request.headers.get('Accept-Language'))
+	print(request.headers.get('User-Agent'))
+	print(request.headers.get('Referer'))
 	if userLanguage == 'it':
 		return render_template('it.html')
 	elif userLanguage == 'de':
