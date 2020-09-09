@@ -64,7 +64,12 @@ def sscnapoli():
 
 @app.route('/ratings', methods=['GET'])
 def ratings():
+	# TODO: fix
 	return 'Under Construction'
+
+@app.route('/stocks', methods=['GET'])
+def stocks():
+	return render_template('stocks.html')
 
 if __name__ == '__main__':
     app.run(host='localhost', port=8080, debug=True)
