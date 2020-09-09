@@ -8,15 +8,20 @@ app = Flask(__name__)
 
 userLanguage = 'en'
 ts = time.time()
-tracking = True
 
 @app.route('/', methods=['GET'])
 def hello():
-	print(ts)
-	print(request.headers.get('DNT'))
-	print(request.headers.get('Accept-Language'))
-	print(request.headers.get('User-Agent'))
-	print(request.headers.get('Referer'))
+	doNotTrack = request.headers.get('DNT')
+	
+	if doNotTrack != '1':
+		language = request.headers.get('Accept-Language')
+		user = request.headers.get('User-Agent')
+		referer = request.headers.get('Referer')
+		with open('log.txt', 'a') as fo:
+			fo.write('TS:'+str(ts)+'  AL:'+str(language)+'  UA:'+str(user)+'  R:'+str(referer)+' \n')
+	else:
+		print('user has asked not to be tracked')
+		
 	if userLanguage == 'it':
 		return render_template('it.html')
 	elif userLanguage == 'de':
