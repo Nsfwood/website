@@ -2,13 +2,16 @@ from flask import Flask
 from flask import render_template
 from flask import request
 from flask import redirect
+import time
 
 app = Flask(__name__)
 
 userLanguage = 'en'
+ts = time.time()
 
 @app.route('/', methods=['GET'])
 def hello():
+	print(ts)
 	print(request.headers.get('Accept-Language'))
 	if userLanguage == 'it':
 		return render_template('it.html')
