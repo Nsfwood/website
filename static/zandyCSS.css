@@ -1,0 +1,13 @@
+* {
+	font-family: Sans-Serif;
+}
+body {
+	margin: auto;
+	max-width: 800px;
+}
+textarea {
+	max-width: 100%
+}
+img {
+	max-width: 100%
+}
