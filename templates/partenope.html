@@ -19,9 +19,14 @@
 		<form action="" method="POST">
 			<label for="name">Passenger Name:</label>
 			<input type="name" name="name">
+			<br>
 			
 			<label for="friendCode">Frequent Flier Number (Friend Code):</label>
 			<input type="text" name="friendCode" placeholder="0000-1111-2222">
+			<br>
+			
+			<label for="date">Date:</label>
+			<input type="datetime-local" name="date" placeholder="YYYY-MM-DD">
 			<br>
 			
 			<label for="from">From:</label>
@@ -29,9 +34,6 @@
 			
 			<label for="to">To:</label>
 			<input type="text" name="from" placeholder="Partenope (PRT)" readonly>
-			
-			<label for="date">Date:</label>
-			<input type="datetime-local" name="date">
 			<br>
 			
 			<input type="submit" value="Book Flight">
