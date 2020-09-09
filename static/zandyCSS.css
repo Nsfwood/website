@@ -11,3 +11,6 @@ textarea {
 img {
 	max-width: 100%
 }
+progress {
+	width: 100%
+}
