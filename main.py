@@ -11,16 +11,16 @@ ts = time.time()
 
 @app.route('/', methods=['GET'])
 def hello():
-	doNotTrack = request.headers.get('DNT')
-	
-	if doNotTrack != '1':
-		language = request.headers.get('Accept-Language')
-		user = request.headers.get('User-Agent')
-		referer = request.headers.get('Referer')
-		with open('log.txt', 'a') as fo:
-			fo.write('TS:'+str(ts)+'  AL:'+str(language)+'  UA:'+str(user)+'  R:'+str(referer)+' \n')
-	else:
-		print('user has asked not to be tracked')
+# 	doNotTrack = request.headers.get('DNT')
+# 	
+# 	if doNotTrack != '1':
+# 		language = request.headers.get('Accept-Language')
+# 		user = request.headers.get('User-Agent')
+# 		referer = request.headers.get('Referer')
+# 		with open('log.txt', 'a') as fo:
+# 			fo.write('TS:'+str(ts)+'  AL:'+str(language)+'  UA:'+str(user)+'  R:'+str(referer)+' \n')
+# 	else:
+# 		print('user has asked not to be tracked')
 		
 	if userLanguage == 'it':
 		return render_template('it.html')
@@ -52,6 +52,7 @@ def zanpok():
 	
 @app.route('/partenope', methods=['GET'])
 def partenope():
+# 	TODO: fix form
 	return render_template('partenope.html')
 	
 @app.route('/astros', methods=['GET'])
