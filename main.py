@@ -4,14 +4,14 @@ from flask import request
 from flask import redirect
 import time
 import uuid
-from google.cloud import firestore
+# from google.cloud import firestore
 
 app = Flask(__name__)
 
 userLanguage = 'en'
 ts = time.time()
 	
-db = firestore.Client()
+# db = firestore.Client()
 
 @app.route('/', methods=['GET'])
 def hello():
@@ -89,18 +89,19 @@ def tHelp():
 		correct = request.form.get('correct')
 		com = request.form.get('com')
 		
-		doc_ref = db.collection(u'translations').document(str(uuid.uuid4()))
-		doc_ref.set({
-    		u'name': name,
-    		u'email': email,
-    		u'project': project,
-    		u'land': lang,
-    		u'original': original,
-    		u'correct': correct,
-    		u'com': com,
-		})
+# 		doc_ref = db.collection(u'translations').document(str(uuid.uuid4()))
+# 		doc_ref.set({
+#     		u'name': name,
+#     		u'email': email,
+#     		u'project': project,
+#     		u'land': lang,
+#     		u'original': original,
+#     		u'correct': correct,
+#     		u'com': com,
+# 		})
 		
-		return 'Submitted. Thank you. Danke. Grazie.'
+# 		return 'Submitted. Thank you. Danke. Grazie.'
+		return 'Website Error. We are fixing it.'
 
 if __name__ == '__main__':
     app.run(host='localhost', port=8080, debug=True)
