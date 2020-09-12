@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link type="text/css" rel="stylesheet" href="/static/zandyCSS.css">
+        <title>Help Translate my Projects</title>
+	</head>
+	<body>
+		<h2>Help with Translations</h2>
+		<form action="" id="tForm" method="POST">
+			<p>Contact Information</p>
+			<label for="name">Name:</label>
+			<input type="name" name="name">
+			<label for="email">Email:</label>
+			<input type="email" name="email">
+			<br>
+			<br>
+			
+			<label for="project">Project:</label required>
+			<select name="project" form="tForm">
+				<option value="0">This Website</option>
+				<option value="1">Animal Countdown</option>
+				<option value="2">Water Club</option>
+				<option value="3">Lines</option>
+				<option value="4">Palette</option>
+			</select>
+			<br>
+			<br>
+			
+			<label for="lang">Language:</label>
+			<input type="text" name="lang" placeholder="Deutsch" required>
+			<br>
+			<br>
+			
+			<label for="original">Incorrect or Untranslated Line:</label>
+			<input type="text" name="original" placeholder="Hello" required>
+			
+			<label for="correct">Correct Translation:</label>
+			<input type="text" name="correct" placeholder="Hallo" required>
+			<br>
+			<br>
+			
+			<label for="com">Comments:</label>
+			<textarea name="com"></textarea>
+			<br>
+			<br>
+			
+			<input type="submit" value="Submit">
+		</form>
+	</body>
+</html>
