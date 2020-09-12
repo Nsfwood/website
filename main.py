@@ -3,11 +3,15 @@ from flask import render_template
 from flask import request
 from flask import redirect
 import time
+import uuid
+from google.cloud import firestore
 
 app = Flask(__name__)
 
 userLanguage = 'en'
 ts = time.time()
+	
+db = firestore.Client()
 
 @app.route('/', methods=['GET'])
 def hello():
@@ -71,6 +75,32 @@ def ratings():
 @app.route('/projects', methods=['GET'])
 def projects():
 	return render_template('projects.html')
+	
+@app.route('/translationhelp', methods=['GET', 'POST'])
+def tHelp():
+	if request.method == 'GET':
+		return render_template('translationhelp.html')
+	if request.method == 'POST':
+		name = request.form.get('name')
+		email = request.form.get('email')
+		project = request.form.get('project')
+		lang = request.form.get('lang')
+		original = request.form.get('original')
+		correct = request.form.get('correct')
+		com = request.form.get('com')
+		
+		doc_ref = db.collection(u'translations').document(str(uuid.uuid4()))
+		doc_ref.set({
+    		u'name': name,
+    		u'email': email,
+    		u'project': project,
+    		u'land': lang,
+    		u'original': original,
+    		u'correct': correct,
+    		u'com': com,
+		})
+		
+		return 'Submitted. Thank you. Danke. Grazie.'
 
 if __name__ == '__main__':
     app.run(host='localhost', port=8080, debug=True)
