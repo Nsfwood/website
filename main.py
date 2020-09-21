@@ -4,6 +4,7 @@ from flask import request
 from flask import redirect
 import time
 import uuid
+import random
 # from google.cloud import firestore
 
 app = Flask(__name__)
@@ -102,6 +103,12 @@ def tHelp():
 		
 # 		return 'Submitted. Thank you. Danke. Grazie.'
 		return 'Website Error. We are fixing it.'
+		
+@app.route('/randomcity', methods=['GET'])
+def randomCity():
+	lat = random.uniform(-85.0, 85.0)
+	lon = random.uniform(-180.0, 180.0)
+	return str(lat) + ' ' + str(lon)
 
 if __name__ == '__main__':
     app.run(host='localhost', port=8080, debug=True)
