@@ -102,7 +102,7 @@ def tHelp():
 # 		})
 		
 # 		return 'Submitted. Thank you. Danke. Grazie.'
-		return 'Website Error. We are fixing it.'
+		return 'Coming Soon'
 		
 @app.route('/randomcity', methods=['GET'])
 def randomCity():
