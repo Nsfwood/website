@@ -75,7 +75,17 @@ def ratings():
 
 @app.route('/projects', methods=['GET'])
 def projects():
-	return render_template('projects.html')
+	return """Fish Camp - Released <br>
+			GG - Beta <br>
+			Palette - Beta <br>
+			Animal Countdown - Released <br>
+			People in Action - Beta <br>
+			Stocks - Alpha <br>
+			Ratings - NiD<br>
+			Water Club - Released<br>
+			Music Story - NiD <br>"""
+	
+# 	return render_template('projects.html')
 	
 @app.route('/translationhelp', methods=['GET', 'POST'])
 def tHelp():
@@ -108,7 +118,8 @@ def tHelp():
 def randomCity():
 	lat = random.uniform(-85.0, 85.0)
 	lon = random.uniform(-180.0, 180.0)
-	return str(lat) + ' ' + str(lon)
+	return '<a href="http://maps.apple.com/?ll= '+str(lat)+','+str(lon)+'&q=Pin">Open in Apple Maps</a>'
+# 	return str(lat) + ' ' + str(lon)
 
 if __name__ == '__main__':
     app.run(host='localhost', port=8080, debug=True)
