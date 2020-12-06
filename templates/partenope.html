@@ -9,14 +9,14 @@
 	<body>
 		<h2>Partenope Board of Tourism</h2>
 		<h3>Our Island</h3>
-		<img src="images/PRT001.jpg" style="width: 300px;">
+		<img src="{{url_for('static', filename='PRT001.jpg')}}" style="width: 300px;">
 		<p>Partenope is home to a diverse array of wildlife, an extensive museum, and a beautiful town with several stores and an open market.</p>
-		<img src="images/PRT002.jpg" style="width: 600px;">
+		<img src="{{url_for('static', filename='PRT002.jpg')}}" style="width: 600px;">
 		<p>Our Representative, Alexander, works with all Partenope villagers to build the best island possible.
 		<h3>Our Airport</h3>
 		<p>SW-8313-3428-2224</p>
 		<p>Partenope Airport, PRT, is serviced by Dodo Airlines with regular flights. Book your flight below.</p>
-		<img src="images/PRT003.png" style="width: 100px;">
+		<img src="{{url_for('static', filename='PRT003.png')}}" style="width: 100px;">
 		<form action="" method="POST">
 			<label for="name">Passenger Name:</label>
 			<input type="name" name="name">
@@ -44,5 +44,7 @@
 		<h3>☁️ Dreaming About Visiting? ☁️</h3>
 		<p>You won't need to book a flight, just dream about visiting!</p>
 		<p>DA-1960-6799-5632</p>
+		<h3><a href="https://www.animal-crossing.com/new-horizons/news/">Island News</a></h3>
+		<p>Stay up to date with the latest news from all islands.</p>
 	</body>
 </html>
